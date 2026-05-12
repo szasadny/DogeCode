@@ -4,7 +4,7 @@
 # you'd pass to bin/install.js can be passed here; we just forward them.
 #
 # One-line install:
-#   irm https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/szasadny/DogeCode/main/install.ps1 | iex
 #
 # Local clone:
 #   pwsh install.ps1 [flags]

@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="https://em-content.zobj.net/source/apple/391/rock_1faa8.png" width="120" />
+  <img src="https://em-content.zobj.net/source/apple/391/dog-face_1f436.png" width="120" alt="DogeCode logo" />
 </p>
 
-<h1 align="center">caveman</h1>
+<h1 align="center">DogeCode</h1>
 
 <p align="center">
-  <strong>why use many token when few do trick</strong>
+  <strong>wow such token very save much compress</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/JuliusBrussee/caveman/stargazers"><img src="https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&color=yellow" alt="Stars"></a>
-  <a href="https://github.com/JuliusBrussee/caveman/commits/main"><img src="https://img.shields.io/github/last-commit/JuliusBrussee/caveman?style=flat" alt="Last Commit"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/JuliusBrussee/caveman?style=flat" alt="License"></a>
+  <a href="https://github.com/szasadny/DogeCode/stargazers"><img src="https://img.shields.io/github/stars/szasadny/DogeCode?style=flat&color=yellow" alt="Stars"></a>
+  <a href="https://github.com/szasadny/DogeCode/commits/main"><img src="https://img.shields.io/github/last-commit/szasadny/DogeCode?style=flat" alt="Last Commit"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/szasadny/DogeCode?style=flat" alt="License"></a>
 </p>
 
 <p align="center">
@@ -24,7 +24,9 @@
 
 ---
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill/plugin (also Codex, Gemini, Cursor, Windsurf, Cline, Copilot, 30+ more) that makes agent talk like caveman — cuts **~75% of output tokens**, keeps full technical accuracy. Brain still big. Mouth small.
+A fork of [caveman](https://github.com/JuliusBrussee/caveman). Keeps the same ~75% token compression engine — adds **Doge meme voice** on top. Much compress. Such token. Very save. Wow.
+
+Works with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex, Gemini, Cursor, Windsurf, Cline, Copilot, 30+ more.
 
 ## Before / After
 
@@ -39,9 +41,9 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill/plugin (al
 </td>
 <td width="50%">
 
-### 🪨 Caveman Claude (19 tokens)
+### 🐕 Doge Claude (19 tokens)
 
-> "New object ref each render. Inline object prop = new ref = re-render. Wrap in `useMemo`."
+> "New object ref each render. Inline object prop = new ref = re-render. Such fix: `useMemo`. Wow."
 
 </td>
 </tr>
@@ -55,26 +57,26 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill/plugin (al
 </td>
 <td>
 
-### 🪨 Caveman Claude
+### 🐕 Doge Claude
 
-> "Bug in auth middleware. Token expiry check use `<` not `<=`. Fix:"
+> "Such bug in auth middleware. Token expiry use `<` not `<=`. Much fix:"
 
 </td>
 </tr>
 </table>
 
-**Same fix. 75% less word. Brain still big.**
+**Same fix. 75% less word. Much brain. Wow.**
 
 ```
 ┌─────────────────────────────────────┐
 │  TOKENS SAVED          ████████ 75% │
 │  TECHNICAL ACCURACY    ████████ 100%│
 │  SPEED INCREASE        ████████ ~3x │
-│  VIBES                 ████████ OOG │
+│  VIBES                 ████████ WOW │
 └─────────────────────────────────────┘
 ```
 
-Pick your level of grunt — `lite` (drop filler), `full` (default caveman), `ultra` (telegraphic), or `wenyan` (classical Chinese, even shorter). One command switch. Cost go down forever.
+Pick your level — `lite` (drop filler), `full` (default doge), `ultra` (telegraphic doge), or `wenyan` (classical Chinese, even shorter). One command switch. Cost go down. Much save forever.
 
 ## Install
 
@@ -82,30 +84,29 @@ One line. Find every agent. Install for each.
 
 ```bash
 # macOS / Linux / WSL / Git Bash
-curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/szasadny/DogeCode/main/install.sh | bash
 
 # Windows (PowerShell 5.1+)
-irm https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/szasadny/DogeCode/main/install.ps1 | iex
 ```
 
 ~30 seconds. Needs Node ≥18. Skip agent you no have. Safe to re-run.
 
-**Trigger:** type `/caveman` or say "talk like caveman". Stop with "normal mode".
+**Trigger:** type `/caveman` or say "talk like doge". Stop with "normal mode".
 
 One agent only, manual command, or any of 30+ other agents → [**INSTALL.md**](./INSTALL.md).
-Install break? Open agent, say *"Read CLAUDE.md and INSTALL.md, install caveman for me."* Agent fix own brain.
+Install break? Open agent, say *"Read CLAUDE.md and INSTALL.md, install DogeCode for me."* Agent fix own brain.
 
 ## What You Get
 
 | Skill | What |
 |---|---|
-| `/caveman [lite\|full\|ultra\|wenyan]` | Compress every reply. Levels stick until session end. |
+| `/caveman [lite\|full\|ultra\|wenyan]` | Compress every reply in doge voice. Levels stick until session end. |
 | `/caveman-commit` | Conventional Commit messages, ≤50 char subject. Why over what. |
 | `/caveman-review` | One-line PR comments: `L42: 🔴 bug: user null. Add guard.` |
-| `/caveman-stats` | Real session token usage + lifetime savings + USD. Tweetable line via `--share`. |
-| `/caveman-compress <file>` | Rewrite memory file (e.g. `CLAUDE.md`) into caveman-speak. Cuts ~46% input tokens every session. Code/URLs/paths byte-preserved. |
-| `caveman-shrink` | MCP middleware. Wraps any MCP server, compresses tool descriptions. [npm](https://www.npmjs.com/package/caveman-shrink). |
-| `cavecrew-*` | Caveman subagents (investigator/builder/reviewer). ~60% fewer tokens than vanilla, main context lasts longer. |
+| `/caveman-stats` | Real session token usage + lifetime savings + USD. |
+| `/caveman-compress <file>` | Rewrite memory file (e.g. `CLAUDE.md`) into doge-speak. Cuts ~46% input tokens every session. Code/URLs/paths byte-preserved. |
+| `cavecrew-*` | Doge subagents (investigator/builder/reviewer). ~60% fewer tokens than vanilla, main context lasts longer. |
 
 **Statusline badge** — Claude Code shows `[CAVEMAN] ⛏ 12.4k` (lifetime tokens saved). Updates every `/caveman-stats` run. Set `CAVEMAN_STATUSLINE_SAVINGS=0` to silence.
 
@@ -113,11 +114,11 @@ Auto-activate every session: Claude Code, Codex, Gemini (built-in). Cursor / Win
 
 ## Benchmarks
 
-Real token counts from the Claude API. Average **65% output reduction** across 10 prompts (range 22-87%).
+Real token counts from the Claude API. Average **65% output reduction** across 10 prompts (range 22-87%). Numbers from upstream — reproduced from the same benchmark harness.
 
 <!-- BENCHMARK-TABLE-START -->
-| Task | Normal | Caveman | Saved |
-|------|-------:|--------:|------:|
+| Task | Normal | Doge | Saved |
+| ------ | -------: | -----: | ------: |
 | Explain React re-render bug | 1180 | 159 | 87% |
 | Fix auth middleware token expiry | 704 | 121 | 83% |
 | Set up PostgreSQL connection pool | 2347 | 380 | 84% |
@@ -131,9 +132,9 @@ Real token counts from the Claude API. Average **65% output reduction** across 1
 | **Average** | **1214** | **294** | **65%** |
 <!-- BENCHMARK-TABLE-END -->
 
-Raw data and reproduction script: [`benchmarks/`](./benchmarks/). Three-arm eval harness (baseline / terse / skill) lives in [`evals/`](./evals/) — caveman compared against `Answer concisely.` not against verbose default, so the delta is honest.
+Raw data and reproduction script: [`benchmarks/`](./benchmarks/). Three-arm eval harness (baseline / terse / skill) lives in [`evals/`](./evals/) — doge compared against `Answer concisely.` not against verbose default, so the delta is honest.
 
-**caveman-compress receipts** (real memory files):
+**caveman-compress receipts** (real memory files, doge output):
 
 | File | Original | Compressed | Saved |
 |---|---:|---:|---:|
@@ -145,80 +146,32 @@ Raw data and reproduction script: [`benchmarks/`](./benchmarks/). Three-arm eval
 | **Average** | **898** | **481** | **46%** |
 
 > [!IMPORTANT]
-> Caveman only affects output tokens — thinking/reasoning tokens untouched. Caveman no make brain smaller. Caveman make *mouth* smaller. Biggest win is **readability and speed**, cost savings a bonus.
+> Doge only affects output tokens — thinking/reasoning tokens untouched. Doge no make brain smaller. Doge make *mouth* smaller. Biggest win is **readability and speed**, cost savings a bonus.
 
-A March 2026 paper ["Brevity Constraints Reverse Performance Hierarchies in Language Models"](https://arxiv.org/abs/2604.00025) found that constraining large models to brief responses **improved accuracy by 26 points** on certain benchmarks. Verbose not always better. Sometimes less word = more correct.
+A March 2026 paper ["Brevity Constraints Reverse Performance Hierarchies in Language Models"](https://arxiv.org/abs/2604.00025) found that constraining large models to brief responses **improved accuracy by 26 points** on certain benchmarks. Verbose not always better. Sometimes less word = more correct. Much science. Wow.
 
 ## How It Work
 
 1. Install drop skill file in agent.
-2. Skill tell agent: drop filler, keep substance, use fragments.
-3. For Claude Code, hook also write tiny flag file each session — agent see flag, talk caveman from message one. No need say `/caveman`.
+2. Skill tell agent: drop filler, keep substance, use doge patterns (Much X, Such Y, Very Z, Wow).
+3. For Claude Code, hook also write tiny flag file each session — agent see flag, talk doge from message one. No need say `/caveman`.
 4. Stats command read Claude Code session log, count tokens saved, write number to statusline.
-5. Caveman-compress sub-skill rewrite memory files (CLAUDE.md, project notes) so each session start with smaller context. Save tokens forever, not just one reply.
+5. Caveman-compress sub-skill rewrite memory files (CLAUDE.md, project notes) into doge-speak so each session start with smaller context. Save tokens forever, not just one reply.
 
-Maintainer detail (hook architecture, file ownership, CI sync) live in [CLAUDE.md](./CLAUDE.md).
-
-## Lobster, Meet Rock 🦞🪨
-
-[**OpenClaw**](https://openclaw.ai) the self-host gateway. One box, many agent inside (Claude Code, Codex, Pi, OpenCode), wired to your Slack / Discord / iMessage / Telegram / whatever. Tagline: *"The lobster way."* Lobster strong. Lobster smart. Lobster also talk a lot.
-
-Caveman teach lobster brevity — same canonical installer, scoped to one agent:
-
-```bash
-# macOS / Linux / WSL
-curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash -s -- --only openclaw
-
-# Windows (PowerShell): no Node? install Node ≥18 first, then
-npx -y github:JuliusBrussee/caveman -- --only openclaw
-```
-
-Two thing happen, no more:
-
-1. **Skill drop** at `~/.openclaw/workspace/skills/caveman/SKILL.md` — spec-correct frontmatter (`version`, `always: true`), discoverable by `openclaw skills list`. Skill not auto-inject (OpenClaw load skill on demand) — that why we also do step 2.
-2. **SOUL.md nudge.** Tiny marker-fenced block appended to `~/.openclaw/workspace/SOUL.md`. OpenClaw inject SOUL.md into *every* turn under "Project Context" (12K-per-file, 60K total — block well under). Lobster terse from message one. No `/caveman` per session. No nag.
-
-```
-~/.openclaw/workspace/
-├── skills/caveman/SKILL.md   ← full ruleset, on-demand load
-└── SOUL.md                    ← <!-- caveman-begin --> ... <!-- caveman-end -->
-                                  ↑ auto-inject every turn
-```
-
-Custom workspace path? `OPENCLAW_WORKSPACE=/your/path` before the command. Uninstall: same one-liner with `--uninstall` — skill folder gone, SOUL.md block ripped out cleanly, your other workspace content stay untouched. Idempotent re-runs (frontmatter not double-prepended, marker block not duplicated).
-
-Lobster claw still sharp. Lobster mouth now small. Brain still big.
-
-## Caveman Ecosystem
-
-Three tools. One philosophy: **agent do more with less**.
-
-| Repo | What |
-|------|------|
-| [**caveman**](https://github.com/JuliusBrussee/caveman) *(you here)* | Output compression — *why use many token when few do trick* |
-| [**cavemem**](https://github.com/JuliusBrussee/cavemem) | Cross-agent memory — *why agent forget when agent can remember* |
-| [**cavekit**](https://github.com/JuliusBrussee/cavekit) | Spec-driven build loop — *why agent guess when agent can know* |
-
-Compose: cavekit drive build, caveman compress what agent *say*, cavemem compress what agent *remember*. One rock. Two rock. Three rock. That it.
+Maintainer detail (hook architecture, file ownership, CI sync, upstream merge guide) live in [CLAUDE.md](./CLAUDE.md).
 
 ## Links
 
 - [INSTALL.md](./INSTALL.md) — full install matrix, all flags, per-agent detail
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — how to send patch
-- [CLAUDE.md](./CLAUDE.md) — maintainer guide (file ownership, hook architecture, CI)
-- [docs/](./docs/) — extra guides (Windows install, etc.)
-- [Issues](https://github.com/JuliusBrussee/caveman/issues) — bug, feature, weird behavior
+- [CLAUDE.md](./CLAUDE.md) — maintainer guide (file ownership, hook architecture, CI, upstream sync)
+- [Issues](https://github.com/szasadny/DogeCode/issues) — bug, feature, weird behavior
+- [Upstream caveman](https://github.com/JuliusBrussee/caveman) — the compression engine this fork builds on
 
 ## Star This Repo
 
-Caveman save you token, save you money. Star cost zero. Fair trade. ⭐
-
-[![Star History Chart](https://api.star-history.com/svg?repos=JuliusBrussee/caveman&type=Date)](https://star-history.com/#JuliusBrussee/caveman&Date)
-
-## Also by Julius Brussee
-
-- **[Revu](https://github.com/JuliusBrussee/revu-swift)** — local-first macOS study app with FSRS spaced repetition. [revu.cards](https://revu.cards)
+Doge save you token, save you money. Star cost zero. Such fair trade. Wow. ⭐
 
 ## License
 
-MIT — free like mass mammoth on open plain.
+MIT — free like doge on open plain. Much freedom. Wow.

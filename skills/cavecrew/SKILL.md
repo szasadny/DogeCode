@@ -1,17 +1,17 @@
 ---
 name: cavecrew
 description: >
-  Decision guide for delegating to caveman-style subagents. Tells the main
+  Decision guide for delegating to doge-style subagents. Tells the main
   thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder`
   (1-2 file edit), or `cavecrew-reviewer` (diff review) instead of doing the
-  work inline or using vanilla `Explore`. Subagent output is caveman-compressed
+  work inline or using vanilla `Explore`. Subagent output is doge-compressed
   so the tool-result injected back into main context is ~60% smaller — main
   context lasts longer across long sessions.
   Trigger: "delegate to subagent", "use cavecrew", "spawn investigator/builder/reviewer",
   "save context", "compressed agent output".
 ---
 
-Cavecrew = three subagent presets that emit caveman output. Same job as Anthropic defaults (`Explore`, edit-style agents, reviewer); difference is the tool-result they return is compressed, so main context shrinks per delegation.
+Cavecrew = three subagent presets that emit doge output. Same job as Anthropic defaults (`Explore`, edit-style agents, reviewer); difference is the tool-result they return is compressed, so main context shrinks per delegation.
 
 ## When to use cavecrew vs alternatives
 
@@ -25,7 +25,7 @@ Cavecrew = three subagent presets that emit caveman output. Same job as Anthropi
 | Deep code review with rationale + alternatives | `Code Reviewer` (vanilla) |
 | One-line answer you already know | Main thread, no subagent |
 
-Rule of thumb: **if you'd want the subagent's output in 1/3 the tokens, pick cavecrew. If you'd want prose, pick vanilla.**
+Rule of thumb: **if you'd want the subagent's output in 1/3 the tokens, pick cavecrew (much save, wow). If you'd want prose, pick vanilla.**
 
 ## Why this exists (the real win)
 
@@ -75,8 +75,8 @@ Skip investigator. Hand exact path:line to `cavecrew-builder` directly.
 - Don't use `cavecrew-builder` when you don't already know the file. Spawn investigator first or main thread will eat tokens passing context.
 - Don't chain `cavecrew-investigator → cavecrew-builder` for a 5-file refactor. Builder will return `too-big.` and you'll have wasted a turn.
 - Don't ask `cavecrew-reviewer` for "general feedback" — it returns findings only, no architecture opinions. Use `Code Reviewer` for that.
-- Don't expect prose. Cavecrew output is structured, sometimes terse to the point of cryptic. If a human will read it directly, paraphrase.
+- Don't expect prose. Cavecrew output is structured doge — terse to the point of cryptic. If a human will read it directly, paraphrase.
 
 ## Auto-clarity (inherited)
 
-Subagents drop caveman → normal English for security warnings, irreversible-action confirmations, and any output where fragment ambiguity could be misread. Resume caveman after.
+Subagents drop doge → normal English for security warnings, irreversible-action confirmations, and any output where fragment ambiguity could be misread. Resume doge after.

@@ -24,7 +24,7 @@ const readline = require('readline');
 const SETTINGS = require('./lib/settings');
 const OPENCLAW = require('./lib/openclaw');
 
-const REPO = 'JuliusBrussee/caveman';
+const REPO = 'szasadny/DogeCode';
 const RAW_BASE = `https://raw.githubusercontent.com/${REPO}/main`;
 const HOOKS_REMOTE = `${RAW_BASE}/src/hooks`;
 const INIT_SCRIPT_URL = `${RAW_BASE}/src/tools/caveman-init.js`;

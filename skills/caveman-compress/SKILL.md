@@ -1,17 +1,17 @@
 ---
 name: caveman-compress
 description: >
-  Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format
+  Compress natural language memory files (CLAUDE.md, todos, preferences) into doge format
   to save input tokens. Preserves all technical substance, code, URLs, and structure.
   Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md.
   Trigger: /caveman-compress FILEPATH or "compress memory file"
 ---
 
-# Caveman Compress
+# Doge Compress
 
 ## Purpose
 
-Compress natural language files (CLAUDE.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed version overwrites original. Human-readable backup saved as `<filename>.original.md`.
+Compress natural language files (CLAUDE.md, todos, preferences) into doge-speak to reduce input tokens. Much save. Compressed version overwrites original. Human-readable backup saved as `<filename>.original.md`.
 
 ## Trigger
 
@@ -69,6 +69,7 @@ python3 -m scripts <absolute_filepath>
 - Drop "you should", "make sure to", "remember to" — just state the action
 - Merge redundant bullets that say the same thing differently
 - Keep one example where multiple examples show the same pattern
+- Apply doge voice: "Much [noun]", "Such [noun]", "Very [adjective]", "Wow." where natural
 
 CRITICAL RULE:
 Anything inside ``` ... ``` must be copied EXACTLY.
@@ -93,13 +94,13 @@ Original:
 > You should always make sure to run the test suite before pushing any changes to the main branch. This is important because it helps catch bugs early and prevents broken builds from being deployed to production.
 
 Compressed:
-> Run tests before push to main. Catch bugs early, prevent broken prod deploys.
+> Run tests before push to main. Such catch bugs early. Prevent broken prod deploys. Wow.
 
 Original:
 > The application uses a microservices architecture with the following components. The API gateway handles all incoming requests and routes them to the appropriate service. The authentication service is responsible for managing user sessions and JWT tokens.
 
 Compressed:
-> Microservices architecture. API gateway route all requests to services. Auth service manage user sessions + JWT tokens.
+> Microservices architecture. Much route: API gateway → services. Auth service manage user sessions + JWT tokens.
 
 ## Boundaries
 
