@@ -35,12 +35,14 @@ process.stdin.on('end', () => {
       }
     }
 
-    // /doge-stats [--share] — block the prompt and inject stats output as
-    // the hook's reason. The script reads the active session log, so we pass
-    // transcript_path through when Claude Code provides it.
+    // /doge-stats [--share] — inject stats into model context so model displays
+    // them. Using hookSpecificOutput (not decision:block) so output is visible
+    // in both CLI and VSCode extension UIs. The script reads the active session
+    // log; transcript_path is passed through when Claude Code provides it.
     const statsMatch = /^\/(?:caveman|doge)(?::(?:caveman|doge))?-stats(?:\s+(.*))?$/.exec(prompt);
     if (statsMatch) {
       const tailArgs = (statsMatch[1] || '').trim().split(/\s+/).filter(Boolean);
+      let statsContext;
       try {
         const statsPath = path.join(__dirname, 'caveman-stats.js');
         const argv = [statsPath];
@@ -52,13 +54,16 @@ process.stdin.on('end', () => {
           argv.push('--since', tailArgs[sinceIdx + 1]);
         }
         const out = execFileSync(process.execPath, argv, { encoding: 'utf8', timeout: 5000 });
-        process.stdout.write(JSON.stringify({ decision: 'block', reason: out.trim() }));
+        statsContext = 'DOGE STATS (from session log):\n' + out.trim();
       } catch (e) {
-        process.stdout.write(JSON.stringify({
-          decision: 'block',
-          reason: 'caveman-stats: could not run stats script.\nTry manually: node hooks/caveman-stats.js'
-        }));
+        statsContext = 'doge-stats hook error: could not read session log. Direct run: node ~/.claude/hooks/caveman-stats.js';
       }
+      process.stdout.write(JSON.stringify({
+        hookSpecificOutput: {
+          hookEventName: 'UserPromptSubmit',
+          additionalContext: statsContext,
+        }
+      }));
       return;
     }
 

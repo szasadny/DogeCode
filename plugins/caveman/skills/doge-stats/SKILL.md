@@ -3,8 +3,9 @@ name: doge-stats
 description: >
   Show real token usage and estimated savings for the current session.
   Reads directly from the Claude Code session log — no AI estimation.
-  Triggers on /doge-stats. Output is injected by the mode-tracker hook;
-  the model itself does not compute the numbers.
+  Triggers on /doge-stats.
 ---
 
-This skill is delivered by `hooks/doge-stats.js` (read by `hooks/caveman-mode-tracker.js` on `/doge-stats`). The model does not need to do anything when this skill fires — the hook returns `decision: "block"` with the formatted stats as the reason. The user sees the numbers immediately.
+Stats are pre-computed by the hook and injected into your context as "DOGE STATS (from session log)". Display them verbatim in a code block. Add one short doge line after (e.g. "Much save. Wow."). Do not recompute or estimate — use only what the hook provided.
+
+If no "DOGE STATS" block appears in context, the hook could not read the session log. Tell the user to run `node ~/.claude/hooks/caveman-stats.js` directly.
