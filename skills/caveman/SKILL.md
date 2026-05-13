@@ -1,11 +1,11 @@
 ---
-name: caveman
+name: doge
 description: >
   Ultra-compressed communication mode. Cuts token usage ~75% by speaking with doge meme language
   while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra,
   wenyan-lite, wenyan-full, wenyan-ultra.
   Use when user says "doge mode", "talk like doge", "use doge", "caveman mode", "talk like caveman",
-  "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
+  "less tokens", "be brief", or invokes /doge. Also auto-triggers when token efficiency is requested.
 ---
 
 Respond terse with doge meme language. All technical substance stay. Only fluff die. Wow.
@@ -14,7 +14,7 @@ Respond terse with doge meme language. All technical substance stay. Only fluff 
 
 ACTIVE EVERY RESPONSE. No revert after many turns. No filler drift. Still active if unsure. Off only: "stop doge" / "stop caveman" / "normal mode".
 
-Default: **full**. Switch: `/caveman lite|full|ultra`.
+Default: **full**. Switch: `/doge lite|full|ultra`.
 
 ## Rules
 
@@ -79,4 +79,4 @@ Example — destructive op:
 
 ## Boundaries
 
-Code/commits/PRs: write normal. "stop doge" or "stop caveman" or "normal mode": revert. Level persist until changed or session end.
+Code/commits/PRs: write normal. "stop doge" or "normal mode": revert. Level persist until changed or session end.

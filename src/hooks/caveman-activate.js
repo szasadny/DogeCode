@@ -40,7 +40,7 @@ safeWriteFlag(flagPath, mode);
 const INDEPENDENT_MODES = new Set(['commit', 'review', 'compress']);
 
 if (INDEPENDENT_MODES.has(mode)) {
-  process.stdout.write('CAVEMAN MODE ACTIVE — level: ' + mode + '. Behavior defined by /caveman-' + mode + ' skill.');
+  process.stdout.write('CAVEMAN MODE ACTIVE — level: ' + mode + '. Behavior defined by /doge-' + mode + ' skill.');
   process.exit(0);
 }
 
@@ -88,7 +88,7 @@ if (skillContent) {
     return acc;
   }, []);
 
-  output = 'CAVEMAN MODE ACTIVE — level: ' + modeLabel + '\n\n' + filtered.join('\n');
+  output = 'DOGE MODE ACTIVE — level: ' + modeLabel + '\n\n' + filtered.join('\n');
 } else {
   // Fallback when SKILL.md is not found (standalone hook install without skills dir).
   // This is the minimum viable ruleset — better than nothing.
@@ -97,7 +97,7 @@ if (skillContent) {
     'Respond terse with doge meme language. All technical substance stay. Only fluff die. Wow.\n\n' +
     '## Persistence\n\n' +
     'ACTIVE EVERY RESPONSE. No revert after many turns. No filler drift. Still active if unsure. Off only: "stop doge" / "stop caveman" / "normal mode".\n\n' +
-    'Current level: **' + modeLabel + '**. Switch: `/caveman lite|full|ultra`.\n\n' +
+    'Current level: **' + modeLabel + '**. Switch: `/doge lite|full|ultra`.\n\n' +
     '## Rules\n\n' +
     'Drop: articles (a/an/the), filler (just/really/basically/actually/simply), pleasantries (sure/certainly/of course/happy to), hedging. ' +
     'Fragments OK. Short synonyms. Technical terms exact. Code blocks unchanged. Errors quoted exact.\n\n' +

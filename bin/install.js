@@ -1209,7 +1209,7 @@ async function main() {
     process.stdout.write('  or pass --only <agent> to force a specific target.\n');
   }
   process.stdout.write('\n');
-  ctx.note("  start any session and say 'caveman mode', or run /caveman in Claude Code");
+  ctx.note("  start any session and say 'doge mode', or run /doge in Claude Code");
   ctx.note(`  uninstall: npx -y github:${REPO} -- --uninstall`);
 
   // Exit code: nonzero only if every detected agent failed

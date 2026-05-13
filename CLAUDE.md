@@ -99,6 +99,7 @@ tests/ benchmarks/ evals/ docs/
 - **Benchmark and eval numbers must be real.** Never fabricate or round. Re-run if doubt.
 - **Skills have two files:** `SKILL.md` (LLM prompt body) + `README.md` (human docs). Different audiences — don't merge them.
 - **CI bot commits back to main after merge** (`[skip ci]`). Account for this when checking branch state.
+- **Never rename `/doge` back to `/caveman` after upstream merges.** The skill frontmatter `name: doge` in `skills/caveman/SKILL.md` is a DogeCode fork addition — upstream will reset it to `name: caveman`. Always restore `name: doge` and `/doge` trigger references after every upstream merge.
 
 ---
 
@@ -115,7 +116,7 @@ git push origin main
 
 **After merging upstream — check these files:**
 
-- `skills/caveman/SKILL.md` — update caveman-speak to doge-speak equivalents
+- `skills/caveman/SKILL.md` — restore `name: doge` in frontmatter and `/doge` trigger (upstream resets to `name: caveman`); update any caveman-speak to doge-speak equivalents
 - `README.md` — translate caveman brand voice to doge voice ("Brain still big" → "Much brain. Wow.")
 - `src/rules/caveman-activate.md` — replace caveman persona with doge persona
 - Benchmark/eval numbers — keep upstream as-is unless you re-run
@@ -163,6 +164,8 @@ README = product front door. Non-technical users decide whether doge is worth in
 
 - If you edited `skills/*/SKILL.md` or `agents/cavecrew-*.md`, the CI sync will auto-commit mirrors into `plugins/caveman/` — wait for it before declaring release complete
 - Verify files importing changed code still compile and obvious related flows aren't broken
+- Always end the "what changed" summary with a suggested commit message written in doge voice. Format: one-line subject in doge (`much X. very Y. wow.`), optional short body if needed. Example: `much /doge command. such hook. very rename. wow.`
+
 
 ---
 

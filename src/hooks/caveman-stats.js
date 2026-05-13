@@ -186,7 +186,7 @@ function formatHistory({ sessions, outputTokens, estSavedTokens, estSavedUsd, si
   const sep = '──────────────────────────────────';
   const window = since ? ` (last ${since})` : '';
   if (sessions === 0) {
-    return `\nCaveman Stats — Lifetime${window}\n${sep}\nNo sessions logged yet — run /caveman-stats inside any session to start tracking.\n${sep}\n`;
+    return `\nDoge Stats — Lifetime${window}\n${sep}\nNo sessions logged yet — run /doge-stats inside any session to start tracking.\n${sep}\n`;
   }
   const usdLine = estSavedUsd > 0 ? `Est. saved (USD):      ~${formatUsd(estSavedUsd)}\n` : '';
   return `\nCaveman Stats — Lifetime${window}\n${sep}\n` +

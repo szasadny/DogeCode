@@ -75,32 +75,32 @@ function parseModeChange(promptRaw) {
   if (!prompt) return null;
 
   // Natural-language deactivation — checked before activation so "stop talking
-  // like caveman" doesn't trip the activation regex.
-  if (/\b(stop|disable|deactivate|turn off)\b.*\bcaveman\b/i.test(prompt) ||
-      /\bcaveman\b.*\b(stop|disable|deactivate|turn off)\b/i.test(prompt) ||
+  // like doge" doesn't trip the activation regex.
+  if (/\b(stop|disable|deactivate|turn off)\b.*\b(caveman|doge)\b/i.test(prompt) ||
+      /\b(caveman|doge)\b.*\b(stop|disable|deactivate|turn off)\b/i.test(prompt) ||
       /\bnormal mode\b/i.test(prompt)) {
     return 'off';
   }
 
   // Natural-language activation
-  if (/\b(activate|enable|turn on|start|talk like)\b.*\bcaveman\b/i.test(prompt) ||
-      /\bcaveman\b.*\b(mode|activate|enable|turn on|start)\b/i.test(prompt)) {
+  if (/\b(activate|enable|turn on|start|talk like)\b.*\b(caveman|doge)\b/i.test(prompt) ||
+      /\b(caveman|doge)\b.*\b(mode|activate|enable|turn on|start)\b/i.test(prompt)) {
     const mode = getDefaultMode();
     return mode === 'off' ? null : mode;
   }
 
   // Slash-command parsing — opencode also expands command files, but if the
   // user types the literal slash command we still want to flip the flag.
-  if (prompt.startsWith('/caveman')) {
+  if (prompt.startsWith('/doge') || prompt.startsWith('/caveman')) {
     const parts = prompt.split(/\s+/);
     const cmd = parts[0];
     const arg = parts[1] || '';
 
-    if (cmd === '/caveman-commit')   return 'commit';
-    if (cmd === '/caveman-review')   return 'review';
-    if (cmd === '/caveman-compress') return 'compress';
+    if (cmd === '/doge-commit'   || cmd === '/caveman-commit')   return 'commit';
+    if (cmd === '/doge-review'   || cmd === '/caveman-review')   return 'review';
+    if (cmd === '/doge-compress' || cmd === '/caveman-compress') return 'compress';
 
-    if (cmd === '/caveman') {
+    if (cmd === '/doge' || cmd === '/caveman') {
       if (!arg)                                     return getDefaultMode();
       if (arg === 'off' || arg === 'stop' || arg === 'disable') return 'off';
       if (arg === 'wenyan-full')                    return 'wenyan';

@@ -150,7 +150,7 @@ CAVEMAN_SETTINGS="$SETTINGS" CAVEMAN_HOOKS_DIR="$HOOKS_DIR" node -e "
     });
   }
 
-  // UserPromptSubmit — track mode changes when user types /caveman commands
+  // UserPromptSubmit — track mode changes when user types /doge commands
   if (!settings.hooks.UserPromptSubmit) settings.hooks.UserPromptSubmit = [];
   const hasPrompt = settings.hooks.UserPromptSubmit.some(e =>
     e.hooks && e.hooks.some(h => h.command && h.command.includes('caveman'))
@@ -195,5 +195,5 @@ echo ""
 echo "What's installed:"
 echo "  - SessionStart hook: auto-loads caveman rules every session"
 echo "  - Mode tracker hook: updates statusline badge when you switch modes"
-echo "    (/caveman lite, /caveman ultra, /caveman-commit, etc.)"
+echo "    (/doge lite, /doge ultra, /doge-commit, etc.)"
 echo "  - Statusline badge: shows [CAVEMAN] or [CAVEMAN:ULTRA] etc."
