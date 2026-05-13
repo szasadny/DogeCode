@@ -32,7 +32,8 @@ jobs:
 
       - name: Sync SKILL.md copies
         run: |
-          cp skills/caveman/SKILL.md plugins/caveman/skills/caveman/SKILL.md
+          mkdir -p plugins/caveman/skills/doge
+          cp skills/caveman/SKILL.md plugins/caveman/skills/doge/SKILL.md
 
       - name: Sync caveman-compress skill to plugin
         run: |
@@ -59,7 +60,7 @@ jobs:
           git add \
             skills/caveman-compress/ \
             plugins/caveman/skills/caveman-compress/ \
-            plugins/caveman/skills/caveman/SKILL.md \
+            plugins/caveman/skills/doge/SKILL.md \
             plugins/caveman/skills/cavecrew/SKILL.md \
             plugins/caveman/agents/cavecrew-investigator.md \
             plugins/caveman/agents/cavecrew-builder.md \

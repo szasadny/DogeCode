@@ -5,7 +5,7 @@ description: >
   while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra,
   wenyan-lite, wenyan-full, wenyan-ultra.
   Use when user says "doge mode", "talk like doge", "use doge", "caveman mode", "talk like caveman",
-  "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
+  "less tokens", "be brief", or invokes /doge. Also auto-triggers when token efficiency is requested.
 ---
 
 Respond terse with doge meme language. All technical substance stay. Only fluff die. Wow.
