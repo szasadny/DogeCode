@@ -34,14 +34,14 @@ Works with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex,
 <tr>
 <td width="50%">
 
-### 🗣️ Normal Claude (69 tokens)
+### 🗣️ Normal Claude
 
 > "The reason your React component is re-rendering is likely because you're creating a new object reference on each render cycle. When you pass an inline object as a prop, React's shallow comparison sees it as a different object every time, which triggers a re-render. I'd recommend using useMemo to memoize the object."
 
 </td>
 <td width="50%">
 
-### 🐕 Doge Claude (19 tokens)
+### 🐕 Doge Claude
 
 > "New object ref each render. Inline object prop = new ref = re-render. Such fix: `useMemo`. Wow."
 
@@ -50,14 +50,14 @@ Works with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex,
 <tr>
 <td>
 
-### 🗣️ Normal Claude
+### 🗣️ Normal Claude (auth bug)
 
 > "Sure! I'd be happy to help you with that. The issue you're experiencing is most likely caused by your authentication middleware not properly validating the token expiry. Let me take a look and suggest a fix."
 
 </td>
 <td>
 
-### 🐕 Doge Claude
+### 🐕 Doge Claude (auth bug)
 
 > "Such bug in auth middleware. Token expiry use `<` not `<=`. Much fix:"
 
@@ -65,16 +65,7 @@ Works with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex,
 </tr>
 </table>
 
-**Same fix. 75% less word. Much brain. Wow.**
-
-```
-┌─────────────────────────────────────┐
-│  TOKENS SAVED          ████████ 75% │
-│  TECHNICAL ACCURACY    ████████ 100%│
-│  SPEED INCREASE        ████████ ~3x │
-│  VIBES                 ████████ WOW │
-└─────────────────────────────────────┘
-```
+**Same fix. Much less word. Wow.**
 
 Pick your level — `lite` (drop filler), `full` (default doge), `ultra` (telegraphic doge), or `wenyan` (classical Chinese, even shorter). One command switch. Cost go down. Much save forever.
 
@@ -108,47 +99,18 @@ Install break? Open agent, say *"Read CLAUDE.md and INSTALL.md, install DogeCode
 | `/doge-compress <file>` | Rewrite memory file (e.g. `CLAUDE.md`) into doge-speak. Cuts ~46% input tokens every session. Code/URLs/paths byte-preserved. |
 | `cavecrew-*` | Doge subagents (investigator/builder/reviewer). ~60% fewer tokens than vanilla, main context lasts longer. |
 
-**Statusline badge** — Claude Code shows `[CAVEMAN] ⛏ 12.4k` (lifetime tokens saved). Updates every `/doge-stats` run. Set `CAVEMAN_STATUSLINE_SAVINGS=0` to silence.
+**Statusline badge** — Claude Code shows lifetime tokens saved. Updates every `/doge-stats` run. Set `CAVEMAN_STATUSLINE_SAVINGS=0` to silence.
 
 Auto-activate every session: Claude Code, Codex, Gemini (built-in). Cursor / Windsurf / Cline / Copilot get always-on rule files via `--with-init`. Other agents trigger with `/doge` per session. Full feature matrix in [INSTALL.md](./INSTALL.md#what-you-get).
 
 ## Benchmarks
 
-Real token counts from the Claude API. Average **65% output reduction** across 10 prompts (range 22-87%). Numbers from upstream — reproduced from the same benchmark harness.
-
 <!-- BENCHMARK-TABLE-START -->
-| Task | Normal | Doge | Saved |
-| ------ | -------: | -----: | ------: |
-| Explain React re-render bug | 1180 | 159 | 87% |
-| Fix auth middleware token expiry | 704 | 121 | 83% |
-| Set up PostgreSQL connection pool | 2347 | 380 | 84% |
-| Explain git rebase vs merge | 702 | 292 | 58% |
-| Refactor callback to async/await | 387 | 301 | 22% |
-| Architecture: microservices vs monolith | 446 | 310 | 30% |
-| Review PR for security issues | 678 | 398 | 41% |
-| Docker multi-stage build | 1042 | 290 | 72% |
-| Debug PostgreSQL race condition | 1200 | 232 | 81% |
-| Implement React error boundary | 3454 | 456 | 87% |
-| **Average** | **1214** | **294** | **65%** |
+No numbers yet — this fork runs on vibes. Benchmark harness lives in [`benchmarks/`](./benchmarks/) if u want run it yourself. Three-arm eval in [`evals/`](./evals/). Upstream [caveman](https://github.com/JuliusBrussee/caveman) has real numbers from same harness.
 <!-- BENCHMARK-TABLE-END -->
-
-Raw data and reproduction script: [`benchmarks/`](./benchmarks/). Three-arm eval harness (baseline / terse / skill) lives in [`evals/`](./evals/) — doge compared against `Answer concisely.` not against verbose default, so the delta is honest.
-
-**caveman-compress receipts** (real memory files, doge output):
-
-| File | Original | Compressed | Saved |
-|---|---:|---:|---:|
-| `claude-md-preferences.md` | 706 | 285 | **59.6%** |
-| `project-notes.md` | 1145 | 535 | **53.3%** |
-| `claude-md-project.md` | 1122 | 636 | **43.3%** |
-| `todo-list.md` | 627 | 388 | **38.1%** |
-| `mixed-with-code.md` | 888 | 560 | **36.9%** |
-| **Average** | **898** | **481** | **46%** |
 
 > [!IMPORTANT]
 > Doge only affects output tokens — thinking/reasoning tokens untouched. Doge no make brain smaller. Doge make *mouth* smaller. Biggest win is **readability and speed**, cost savings a bonus.
-
-A March 2026 paper ["Brevity Constraints Reverse Performance Hierarchies in Language Models"](https://arxiv.org/abs/2604.00025) found that constraining large models to brief responses **improved accuracy by 26 points** on certain benchmarks. Verbose not always better. Sometimes less word = more correct. Much science. Wow.
 
 ## How It Work
 
