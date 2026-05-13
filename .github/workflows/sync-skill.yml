@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - skills/caveman/SKILL.md
+      - skills/doge/SKILL.md
       - skills/cavecrew/SKILL.md
       - agents/cavecrew-*.md
-      - skills/caveman-compress/SKILL.md
-      - skills/caveman-compress/scripts/**
-      - skills/caveman-stats/SKILL.md
+      - skills/doge-compress/SKILL.md
+      - skills/doge-compress/scripts/**
+      - skills/doge-stats/SKILL.md
 
 concurrency:
   group: sync-skill
@@ -34,20 +34,20 @@ jobs:
       - name: Sync SKILL.md copies
         run: |
           mkdir -p plugins/caveman/skills/doge
-          cp skills/caveman/SKILL.md plugins/caveman/skills/doge/SKILL.md
+          cp skills/doge/SKILL.md plugins/caveman/skills/doge/SKILL.md
 
       - name: Sync doge-compress skill to plugin
         run: |
           mkdir -p plugins/caveman/skills/doge-compress
-          cp skills/caveman-compress/SKILL.md plugins/caveman/skills/doge-compress/SKILL.md
+          cp skills/doge-compress/SKILL.md plugins/caveman/skills/doge-compress/SKILL.md
           rm -rf plugins/caveman/skills/doge-compress/scripts
-          cp -r skills/caveman-compress/scripts plugins/caveman/skills/doge-compress/scripts
+          cp -r skills/doge-compress/scripts plugins/caveman/skills/doge-compress/scripts
           rm -rf plugins/caveman/skills/doge-compress/scripts/__pycache__
 
       - name: Sync doge-stats skill to plugin
         run: |
           mkdir -p plugins/caveman/skills/doge-stats
-          cp skills/caveman-stats/SKILL.md plugins/caveman/skills/doge-stats/SKILL.md
+          cp skills/doge-stats/SKILL.md plugins/caveman/skills/doge-stats/SKILL.md
 
       - name: Sync cavecrew skill + agents to plugin
         run: |
@@ -58,12 +58,12 @@ jobs:
           cp agents/cavecrew-reviewer.md plugins/caveman/agents/cavecrew-reviewer.md
 
       - name: Rebuild caveman.skill ZIP
-        run: mkdir -p dist && cd skills && zip -r ../dist/caveman.skill caveman/
+        run: mkdir -p dist && cd skills && zip -r ../dist/caveman.skill doge/
 
       - name: Commit and push if changed
         run: |
           git add \
-            skills/caveman-compress/ \
+            skills/doge-compress/ \
             plugins/caveman/skills/doge-compress/ \
             plugins/caveman/skills/doge/SKILL.md \
             plugins/caveman/skills/doge-stats/SKILL.md \

@@ -1,4 +1,4 @@
-@./skills/caveman/SKILL.md
-@./skills/caveman-commit/SKILL.md
-@./skills/caveman-review/SKILL.md
-@./skills/caveman-compress/SKILL.md
+@./skills/doge/SKILL.md
+@./skills/doge-commit/SKILL.md
+@./skills/doge-review/SKILL.md
+@./skills/doge-compress/SKILL.md

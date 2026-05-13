@@ -66,7 +66,7 @@ const AGENTS = [
   // OpenClaw — global workspace install, not per-repo. The `installer`
   // callback escape hatch bypasses the file/frontmatter/mode triple and
   // hands off to the shared helper. `description` is what `--help` prints.
-  { id: 'openclaw', description: '~/.openclaw/workspace/{skills/caveman/, SOUL.md}',
+  { id: 'openclaw', description: '~/.openclaw/workspace/{skills/doge/, SOUL.md}',
     installer: 'openclaw' },
 ];
 

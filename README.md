@@ -101,16 +101,16 @@ Install break? Open agent, say *"Read CLAUDE.md and INSTALL.md, install DogeCode
 
 | Skill | What |
 |---|---|
-| `/caveman [lite\|full\|ultra\|wenyan]` | Compress every reply in doge voice. Levels stick until session end. |
-| `/caveman-commit` | Conventional Commit messages, ≤50 char subject. Why over what. |
-| `/caveman-review` | One-line PR comments: `L42: 🔴 bug: user null. Add guard.` |
-| `/caveman-stats` | Real session token usage + lifetime savings + USD. |
-| `/caveman-compress <file>` | Rewrite memory file (e.g. `CLAUDE.md`) into doge-speak. Cuts ~46% input tokens every session. Code/URLs/paths byte-preserved. |
+| `/doge [lite\|full\|ultra\|wenyan]` | Compress every reply in doge voice. Levels stick until session end. |
+| `/doge-commit` | Conventional Commit messages, ≤50 char subject. Why over what. |
+| `/doge-review` | One-line PR comments: `L42: 🔴 bug: user null. Add guard.` |
+| `/doge-stats` | Real session token usage + lifetime savings + USD. |
+| `/doge-compress <file>` | Rewrite memory file (e.g. `CLAUDE.md`) into doge-speak. Cuts ~46% input tokens every session. Code/URLs/paths byte-preserved. |
 | `cavecrew-*` | Doge subagents (investigator/builder/reviewer). ~60% fewer tokens than vanilla, main context lasts longer. |
 
-**Statusline badge** — Claude Code shows `[CAVEMAN] ⛏ 12.4k` (lifetime tokens saved). Updates every `/caveman-stats` run. Set `CAVEMAN_STATUSLINE_SAVINGS=0` to silence.
+**Statusline badge** — Claude Code shows `[CAVEMAN] ⛏ 12.4k` (lifetime tokens saved). Updates every `/doge-stats` run. Set `CAVEMAN_STATUSLINE_SAVINGS=0` to silence.
 
-Auto-activate every session: Claude Code, Codex, Gemini (built-in). Cursor / Windsurf / Cline / Copilot get always-on rule files via `--with-init`. Other agents trigger with `/caveman` per session. Full feature matrix in [INSTALL.md](./INSTALL.md#what-you-get).
+Auto-activate every session: Claude Code, Codex, Gemini (built-in). Cursor / Windsurf / Cline / Copilot get always-on rule files via `--with-init`. Other agents trigger with `/doge` per session. Full feature matrix in [INSTALL.md](./INSTALL.md#what-you-get).
 
 ## Benchmarks
 

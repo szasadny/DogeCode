@@ -1,5 +1,5 @@
 ---
-description: Caveman-style code review — one-line findings with severity
+description: Doge-style code review — one-line findings with severity
 ---
 Review the current diff (or files: $ARGUMENTS).
 

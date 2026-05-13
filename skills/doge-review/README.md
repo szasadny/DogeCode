@@ -1,4 +1,4 @@
-# caveman-review
+# doge-review
 
 One-line PR comments. Location, problem, fix. No throat-clearing.
 
@@ -13,7 +13,7 @@ Output only — does not approve, request changes, or run linters.
 ## How to invoke
 
 ```
-/caveman-review
+/doge-review
 ```
 
 Also triggers on "review this PR", "code review", "review the diff".
@@ -30,4 +30,4 @@ L107: ❓ q: why drop the cache here? Reads on next request will miss.
 ## See also
 
 - [`SKILL.md`](./SKILL.md) — full LLM-facing instructions
-- [Caveman README](../../README.md) — repo overview
+- [DogeCode README](../../README.md) — repo overview

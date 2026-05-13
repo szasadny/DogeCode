@@ -63,12 +63,12 @@ Short fragments. Lowercase emphasis. Third-person "doge" not "I". "pls"/"u"/"2" 
 
 ```text
 skills/              # ALL skills — single source of truth
-  caveman/           # Core behavior (SKILL.md + README.md)
-  caveman-commit/
-  caveman-review/
-  caveman-help/
-  caveman-stats/
-  caveman-compress/  # Includes scripts/
+  doge/              # Core behavior (SKILL.md + README.md) — registers /doge in Claude Code
+  doge-commit/
+  doge-review/
+  doge-help/
+  doge-stats/        # registers /doge-stats
+  doge-compress/     # registers /doge-compress; includes scripts/
   cavecrew/
 agents/              # cavecrew subagents — single source of truth
 src/hooks/           # Claude Code hooks + caveman-config.js shared module
@@ -99,7 +99,7 @@ tests/ benchmarks/ evals/ docs/
 - **Benchmark and eval numbers must be real.** Never fabricate or round. Re-run if doubt.
 - **Skills have two files:** `SKILL.md` (LLM prompt body) + `README.md` (human docs). Different audiences — don't merge them.
 - **CI bot commits back to main after merge** (`[skip ci]`). Account for this when checking branch state.
-- **Never rename `/doge` back to `/caveman` after upstream merges.** The skill frontmatter `name: doge` in `skills/caveman/SKILL.md` and the plugin skill directories (`plugins/caveman/skills/doge/`, `doge-stats/`, `doge-compress/`) are DogeCode fork additions. Upstream will reset these to `name: caveman` and `skills/caveman/`. Always restore after every upstream merge. The **directory name** inside `plugins/caveman/skills/` is what Claude Code uses as the slash command — `name:` in the frontmatter must also match.
+- **Never rename `/doge` back to `/caveman` after upstream merges.** Claude Code uses the **directory name** inside `skills/` as the slash command — `skills/doge/` registers `/doge`, `skills/caveman/` registers `/caveman`. The `name:` frontmatter must also match the directory. Upstream resets `skills/caveman/` (directory name) and `name: caveman` (frontmatter). After every upstream merge: `git mv skills/caveman skills/doge`, `git mv skills/caveman-stats skills/doge-stats`, `git mv skills/caveman-compress skills/doge-compress`, and restore `name: doge` in frontmatter. Mirror the same renames in `plugins/caveman/skills/` and update CI paths.
 
 ---
 
@@ -116,7 +116,7 @@ git push origin main
 
 **After merging upstream — check these files:**
 
-- `skills/caveman/SKILL.md` — restore `name: doge` in frontmatter and `/doge` trigger (upstream resets to `name: caveman`); update any caveman-speak to doge-speak equivalents
+- `skills/doge/SKILL.md` (upstream delivers as `skills/caveman/`) — run `git mv skills/caveman skills/doge` then restore `name: doge` in frontmatter and `/doge` trigger; update caveman-speak to doge-speak. Do the same for `skills/caveman-stats` → `skills/doge-stats` and `skills/caveman-compress` → `skills/doge-compress`. Mirror renames in `plugins/caveman/skills/` and update `.github/workflows/sync-skill.yml` copy paths.
 - `README.md` — translate caveman brand voice to doge voice ("Brain still big" → "Much brain. Wow.")
 - `src/rules/caveman-activate.md` — replace caveman persona with doge persona
 - Benchmark/eval numbers — keep upstream as-is unless you re-run

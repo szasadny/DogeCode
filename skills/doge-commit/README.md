@@ -1,4 +1,4 @@
-# caveman-commit
+# doge-commit
 
 Terse Conventional Commits. Why over what.
 
@@ -11,7 +11,7 @@ Outputs only the message. Does not stage, commit, or amend.
 ## How to invoke
 
 ```
-/caveman-commit
+/doge-commit
 ```
 
 Also triggers on phrases like "write a commit", "commit message", "generate commit".
@@ -41,4 +41,4 @@ before 2026-06-01. Old route returns 410 after that date.
 ## See also
 
 - [`SKILL.md`](./SKILL.md) — full LLM-facing instructions
-- [Caveman README](../../README.md) — repo overview
+- [DogeCode README](../../README.md) — repo overview

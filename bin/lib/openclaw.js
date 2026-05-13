@@ -9,7 +9,7 @@
 // and 60K-total cap.
 //
 // To make caveman always-on through OpenClaw, we do two writes:
-//   1. Drop a copy of skills/caveman/SKILL.md into <workspace>/skills/caveman/
+//   1. Drop a copy of skills/doge/SKILL.md into <workspace>/skills/doge/
 //      with OpenClaw-required frontmatter (`version`, `always: true`) merged
 //      in. Makes the skill discoverable via `openclaw skills list` and lets
 //      the orchestrated agent `read` it on demand.
@@ -26,7 +26,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const SKILL_NAME = 'caveman';
+const SKILL_NAME = 'doge';
 const SKILL_VERSION = '1.0.0';
 const MARK_BEGIN = '<!-- caveman-begin -->';
 const MARK_END = '<!-- caveman-end -->';
@@ -95,7 +95,7 @@ function loadBootstrapSnippet(repoRoot) {
     '',
     "The full ruleset and intensity levels live in this workspace's caveman skill:",
     '',
-    '  skills/caveman/SKILL.md',
+    '  skills/doge/SKILL.md',
     '',
     'Default intensity: `full`. Switch with `/doge lite|full|ultra|wenyan`.',
     'Stop with: "stop doge" / "normal mode" / "deactivate doge".',
@@ -112,7 +112,7 @@ function loadBootstrapSnippet(repoRoot) {
 
 function loadSkillBody(repoRoot) {
   if (!repoRoot) return null;
-  return readIfExists(path.join(repoRoot, 'skills', 'caveman', 'SKILL.md'));
+  return readIfExists(path.join(repoRoot, 'skills', 'doge', 'SKILL.md'));
 }
 
 // ── SOUL.md marker-block append/strip ─────────────────────────────────────
@@ -159,7 +159,7 @@ function installOpenclaw({ workspace, repoRoot, dryRun = false, force = false, l
   const ws = workspace || resolveWorkspace();
   const skillBody = loadSkillBody(repoRoot);
   if (!skillBody) {
-    log.warn('  openclaw install requires the caveman repo on disk (skills/caveman/SKILL.md missing).');
+    log.warn('  openclaw install requires the caveman repo on disk (skills/doge/SKILL.md missing).');
     log.note('  Re-run from a clone or via `npx -y github:JuliusBrussee/caveman -- --only openclaw`.');
     return { ok: false, reason: 'repo not available' };
   }

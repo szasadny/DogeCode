@@ -105,11 +105,11 @@ def verify_skill_frontmatter_upload_compatibility() -> None:
     section("Skill Frontmatter Upload Compatibility")
 
     skill_paths = [
-        ROOT / "skills/caveman/SKILL.md",
-        ROOT / "skills/caveman-commit/SKILL.md",
-        ROOT / "skills/caveman-help/SKILL.md",
-        ROOT / "skills/caveman-review/SKILL.md",
-        ROOT / "skills/caveman-compress/SKILL.md",
+        ROOT / "skills/doge/SKILL.md",
+        ROOT / "skills/doge-commit/SKILL.md",
+        ROOT / "skills/doge-help/SKILL.md",
+        ROOT / "skills/doge-review/SKILL.md",
+        ROOT / "skills/doge-compress/SKILL.md",
     ]
     for path in skill_paths:
         description = _frontmatter_description(path)
@@ -123,10 +123,10 @@ def verify_skill_frontmatter_upload_compatibility() -> None:
 
 def verify_synced_files() -> None:
     section("Synced Files")
-    skill_source = ROOT / "skills/caveman/SKILL.md"
+    skill_source = ROOT / "skills/doge/SKILL.md"
 
     skill_copies = [
-        ROOT / "plugins/caveman/skills/caveman/SKILL.md",
+        ROOT / "plugins/caveman/skills/doge/SKILL.md",
     ]
     for copy in skill_copies:
         ensure(
@@ -135,9 +135,9 @@ def verify_synced_files() -> None:
         )
 
     with zipfile.ZipFile(ROOT / "dist" / "caveman.skill") as archive:
-        ensure("caveman/SKILL.md" in archive.namelist(), "caveman.skill missing caveman/SKILL.md")
+        ensure("doge/SKILL.md" in archive.namelist(), "caveman.skill missing doge/SKILL.md")
         ensure(
-            archive.read("caveman/SKILL.md").decode("utf-8")
+            archive.read("doge/SKILL.md").decode("utf-8")
             == skill_source.read_text(encoding="utf-8"),
             "caveman.skill payload mismatch",
         )
@@ -207,7 +207,7 @@ def verify_powershell_static() -> None:
 
 
 def load_compress_modules():
-    sys.path.insert(0, str(ROOT / "skills/caveman-compress"))
+    sys.path.insert(0, str(ROOT / "skills/doge-compress"))
     import scripts.benchmark  # noqa: F401
     import scripts.cli as cli
     import scripts.compress  # noqa: F401
@@ -239,7 +239,7 @@ def verify_compress_cli() -> None:
 
     skip_result = run(
         ["python3", "-m", "scripts", "../../src/hooks/install.sh"],
-        cwd=ROOT / "skills/caveman-compress",
+        cwd=ROOT / "skills/doge-compress",
         check=False,
     )
     ensure(skip_result.returncode == 0, "compress CLI skip path should exit 0")
@@ -251,7 +251,7 @@ def verify_compress_cli() -> None:
 
     missing_result = run(
         ["python3", "-m", "scripts", "../../does-not-exist.md"],
-        cwd=ROOT / "skills/caveman-compress",
+        cwd=ROOT / "skills/doge-compress",
         check=False,
     )
     ensure(missing_result.returncode == 1, "compress CLI missing-file path should exit 1")
