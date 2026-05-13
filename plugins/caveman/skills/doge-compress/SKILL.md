@@ -1,10 +1,10 @@
 ---
-name: caveman-compress
+name: doge-compress
 description: >
   Compress natural language memory files (CLAUDE.md, todos, preferences) into doge format
   to save input tokens. Preserves all technical substance, code, URLs, and structure.
   Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md.
-  Trigger: /caveman-compress FILEPATH or "compress memory file"
+  Trigger: /doge-compress FILEPATH or "compress memory file"
 ---
 
 # Doge Compress
@@ -15,7 +15,7 @@ Compress natural language files (CLAUDE.md, todos, preferences) into doge-speak 
 
 ## Trigger
 
-`/caveman-compress <filepath>` or when user asks to compress a memory file.
+`/doge-compress <filepath>` or when user asks to compress a memory file.
 
 ## Process
 

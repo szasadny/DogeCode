@@ -61,7 +61,7 @@ Short fragments. Lowercase emphasis. Third-person "doge" not "I". "pls"/"u"/"2" 
 
 ## Project structure
 
-```
+```text
 skills/              # ALL skills — single source of truth
   caveman/           # Core behavior (SKILL.md + README.md)
   caveman-commit/
@@ -99,7 +99,7 @@ tests/ benchmarks/ evals/ docs/
 - **Benchmark and eval numbers must be real.** Never fabricate or round. Re-run if doubt.
 - **Skills have two files:** `SKILL.md` (LLM prompt body) + `README.md` (human docs). Different audiences — don't merge them.
 - **CI bot commits back to main after merge** (`[skip ci]`). Account for this when checking branch state.
-- **Never rename `/doge` back to `/caveman` after upstream merges.** The skill frontmatter `name: doge` in `skills/caveman/SKILL.md` is a DogeCode fork addition — upstream will reset it to `name: caveman`. Always restore `name: doge` and `/doge` trigger references after every upstream merge.
+- **Never rename `/doge` back to `/caveman` after upstream merges.** The skill frontmatter `name: doge` in `skills/caveman/SKILL.md` and the plugin skill directories (`plugins/caveman/skills/doge/`, `doge-stats/`, `doge-compress/`) are DogeCode fork additions. Upstream will reset these to `name: caveman` and `skills/caveman/`. Always restore after every upstream merge. The **directory name** inside `plugins/caveman/skills/` is what Claude Code uses as the slash command — `name:` in the frontmatter must also match.
 
 ---
 
@@ -165,7 +165,6 @@ README = product front door. Non-technical users decide whether doge is worth in
 - If you edited `skills/*/SKILL.md` or `agents/cavecrew-*.md`, the CI sync will auto-commit mirrors into `plugins/caveman/` — wait for it before declaring release complete
 - Verify files importing changed code still compile and obvious related flows aren't broken
 - Always end the "what changed" summary with a suggested commit message written in doge voice. Format: one-line subject in doge (`much X. very Y. wow.`), optional short body if needed. Example: `much /doge command. such hook. very rename. wow.`
-
 
 ---
 
